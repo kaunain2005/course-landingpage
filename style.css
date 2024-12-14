@@ -114,6 +114,7 @@ body {
   .navbar-links {
     width: 100%;
     margin-top: 10px;
+    flex-direction: column;
   }
 
   .navbar-links li {
