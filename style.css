@@ -171,6 +171,25 @@ body {
   font-size: 3em;
   margin-bottom: 20px;
   font-weight: bold;
+  background-position: 0;
+  background: linear-gradient(to right, #fff 10%, #ff7300 70%, #fff 10%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 7s infinite linear;
+  animation-fill-mode: forwards;
+  font-family: cursive, sans-serif;
+}
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  50% {
+    background-position: 400px;
+  }
+  100% {
+    background-position: 800px;
+  }
 }
 
 .hero p {
