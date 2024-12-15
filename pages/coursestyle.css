@@ -280,6 +280,14 @@
     margin: 0 auto;
     max-width: 1200px;
 }
+@media (max-width: 480px) {
+        
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+}
 
 /* Skill Card */
 .skill-card {
