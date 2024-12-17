@@ -1,0 +1,404 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  h1, h2 {
+    margin: 0;
+  }
+  
+  /* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Container */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navbar Logo */
+.navbar .logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Navbar Links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  transition: max-height 0.3s ease-in-out;
+  max-height: 1;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.navbar-links li {
+  margin-left: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1em;
+  padding: 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+/* Hover Effect */
+.navbar-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffb400;
+}
+
+/* Menu Toggle Button (Hamburger) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+/* Mobile Menu */
+.navbar-links.active {
+  max-height: 300px; /* Expand the menu when active */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-links {
+    max-height: 0;
+  }
+
+  /* Navbar Container */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+  .navbar-links {
+    width: 100%;
+    margin-top: 10px;
+    flex-direction: column;
+  }
+
+  .navbar-links li {
+    margin: 5px 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: flex; /* Show hamburger icon on mobile */
+    position: relative;
+    left: 55vw;
+  }
+
+  .navbar-links.active {
+    max-height: 300px; /* Show the menu */
+  }
+}
+
+ /* Hero Section */
+.hero {
+  position: relative;
+  background-image: url('images/bg cyber.png');
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Dark Overlay */
+.overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1; /* Ensures the overlay stays above the background but below the content */
+}
+
+/* Hero Content */
+.hero-content {
+  z-index: 4; /* Ensures text stays above the background and overlay */
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  background-position: 0;
+  background: linear-gradient(to right, #fff 10%, #ff7300 70%, #fff 10%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 7s infinite linear;
+  animation-fill-mode: forwards;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  50% {
+    background-position: 400px;
+  }
+  100% {
+    background-position: 800px;
+  }
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  font-size: 1.1em;
+  padding: 15px 30px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design*/
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5em;
+  }
+
+  .hero p {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    font-size: 1em;
+    padding: 12px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+  }
+
+  .cta-button {
+    font-size: 0.9em;
+    padding: 10px 20px;
+  }
+}
+
+    /* Lighting Effect Background */
+    .lighting-effect {
+      position: relative;
+      overflow: hidden;
+        /* position: relative; */
+      }
+      
+      .lighting-effect::before {
+        content: '';
+        position: absolute;
+        /* top: -50%; */
+        /* left: -50%; */
+        width: 100%;
+        height: 100%;
+        /* background: radial-gradient(circle, rgba(255, 255, 255, 0.226) 10%, rgba(255, 255, 255, 0) 60%); */
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 30%, rgba(0, 0, 0, 0) 60%);
+        animation: lighting-move 10s infinite ease-in-out;
+        /* transform: rotate(45deg); */
+        pointer-events: none;
+        z-index: 3;
+      }
+      
+      @keyframes lighting-move {
+        0% {
+          transform: translate(-60%, 0%) scale(1) rotate(0deg);
+        }
+        50% {
+          transform: translate(60%, 0%) scale(1) rotate(0deg);
+        }
+        100% {
+          transform: translate(-60%, 0%) scale(1) rotate(0deg);
+        }
+      }
+  
+/* Courses Section */
+.courses {
+    padding: 50px 20px;
+    background: #f9f9f9;
+    text-align: center;
+  }
+  
+  .courses h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Overall Cards Container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Fancy Card */
+  .fancy-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .fancy-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card Image */
+  .card-image-container {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .card-image-container:hover .card-image {
+    transform: scale(1.1);
+  }
+  
+  /* Shape Overlay */
+  .shape-overlay {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to right, #007BFF, #6A5ACD);
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    z-index: 1;
+  }
+  
+  /* Card Content */
+  .card-content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .course-duration {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  .course-description {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  
+  /* Card Button */
+  .card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+    background: #007BFF;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  
+  .card-button:hover {
+    background: #007bff;
+    transform: scale(1.05);
+  }
+  
+  
+
+
+  
+  /* Footer */
+  footer {
+    background: #1c1c1c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .footer-container p {
+    margin: 5px 0;
+  }
+  
