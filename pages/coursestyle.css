@@ -466,7 +466,7 @@ tr:hover {
 }
 
   /* Certification Section */
-/* .certification-section {
+.certification-section {
   text-align: center;
   padding: 80px 20px;
   background: linear-gradient(135deg, #020041, #243b55);
@@ -485,7 +485,7 @@ tr:hover {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Certification Cards 
+/* Certification Cards */
 .certification-cards {
   display: flex;
   flex-wrap: wrap;
@@ -527,7 +527,7 @@ tr:hover {
   font-size: 1.2em;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 15px;
-} */
+}
 
   /* Call-to-Action Section */
   .call-to-action {
