@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course Registration</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      button:disabled {
+        background-color: #007BFF;
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+    </style>
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -57,9 +64,7 @@
               cyber threats and investigate incidents with expertise.
             </p>
             <!-- <button class="card-button" onclick="window.location.href='https://example.com/register';">Register</button> -->
-            <button class="card-button">
-              <a href="pages/course1.html">Enroll</a>
-            </button>
+            <button disabled class="card-button">Comming soon...</button>
           </div>
         </div>
 
@@ -114,16 +119,18 @@
               Explore machine learning, data visualization, and statistical
               techniques to solve real-world problems.
             </p>
-            <button class="card-button">
-              <a href="pages/course4.html" target="_blank">Enroll</a>
-            </button>
+            <button disabled class="card-button">Comming soon...</button>
           </div>
         </div>
 
         <!-- card 5 -->
         <div class="fancy-card">
           <div class="card-image-container">
-            <img src="images/img5.jpeg" alt="Course Image" class="card-image" />
+            <img
+              src="images/django.png"
+              alt="Course Image"
+              class="card-image"
+            />
             <div class="shape-overlay"></div>
           </div>
           <div class="card-content">
@@ -152,9 +159,7 @@
               Learn to build complete web applications using the CodeIgniter PHP
               framework.
             </p>
-            <button class="card-button">
-              <a href="pages/course6.html" target="_blank">Enroll</a>
-            </button>
+            <button disabled class="card-button">Comming soon...</button>
           </div>
         </div>
 
@@ -171,9 +176,7 @@
               Automate repetitive, rule-based tasks using software robots
               (bots).
             </p>
-            <button class="card-button">
-              <a href="pages/course7.html" target="_blank">Enroll</a>
-            </button>
+            <button disabled class="card-button">Comming soon...</button>
           </div>
         </div>
       </div>
@@ -182,7 +185,6 @@
     <!-- Footer Section -->
     <footer>
       <div class="footer-container">
-        <p>© 2024 Kaunain</p>
         <p>Contact us: foslipy@gmail.com</p>
       </div>
     </footer>
