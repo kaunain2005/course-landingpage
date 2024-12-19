@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Details</title>
+    <link rel="stylesheet" href="coursestyle.css" />
+    <style>
+      /* Certification Section */
+      .certification-section {
+        text-align: center;
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #020041, #243b55);
+        color: white;
+      }
+
+      .certification-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+      }
+
+      .certification-section p {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* Certification Cards */
+      .certification-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .certification-card {
+        background: #02004100;
+        border-radius: 15px;
+        overflow: hidden;
+        width: 700px;
+        padding: 40px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .certification-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .certification-card img {
+        width: 300px;
+        height: auto;
+        margin-bottom: 25px;
+      }
+
+      .certification-card h3 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        color: #fff;
+        text-shadow: 0 0 20px #ff8c00, 0 0 30px #ff8c00, 0 0 40px #ff8c00;
+      }
+
+      .certification-card p {
+        font-size: 1.2em;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 15px;
+      }
+
+      /* tabel contents */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+        animation: tableSlideIn 1s forwards 0.5s; /* Table slides in automatically */
+      }
+
+      caption {
+        font-size: 26px;
+        font-family: "Raleway", sans-serif; /* Raleway for the title */
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 15px;
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #009688;
+        transition: color 0.3s ease;
+        animation: fadeIn 1s forwards 1s; /* Caption fades in after the table */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+      }
+
+      th,
+      td {
+        padding: 18px;
+        text-align: left;
+        font-size: 16px;
+        color: #333;
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.3s ease, color 0.3s ease,
+          transform 0.2s ease;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+        font-family: "Roboto", sans-serif; /* Apply Roboto font to table data */
+      }
+
+      /* Add text effects to table headers */
+      th {
+        background-color: #009688;
+        color: white;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for emphasis */
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      tr:hover {
+        background-color: #f1f1f1;
+        transform: translateY(-2px);
+        transition: transform 0.2s ease;
+      }
+
+      tr:nth-child(even):hover {
+        background-color: #e1f5e0;
+      }
+
+      td {
+        font-weight: 500;
+        letter-spacing: 0.5px; /* Slight spacing between letters */
+        transition: color 0.3s ease;
+        font-family: "Roboto", sans-serif;
+      }
+
+      td:hover {
+        color: #009688; /* Highlight text when hovered */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+        transform: scale(1.05); /* Slight scale-up effect on hover */
+      }
+
+      /* Add transitions for hover effects on the whole row */
+      tr:hover td {
+        color: #009688;
+        transform: scale(
+          1.02
+        ); /* Slightly scale up the text for better effect */
+      }
+
+      /* Automatic Animation for Row Fade-in */
+      tr {
+        animation: rowFadeIn 1s forwards;
+      }
+
+      tr:nth-child(even) {
+        animation-delay: 0.3s;
+      }
+
+      tr:nth-child(odd) {
+        animation-delay: 0.6s;
+      }
+
+      /* Keyframe Animations */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes tableSlideIn {
+        0% {
+          transform: translateX(-200px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes rowFadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        table {
+          width: 100%;
+          font-size: 14px;
+        }
+
+        .container {
+          padding: 20px;
+        }
+
+        caption {
+          font-size: 22px;
+        }
+
+        th,
+        td {
+          padding: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="small"></div> -->
+    <!-- Header Section -->
+    <header class="course-header lighting-effect">
+      <div class="overlay"></div>
+      <h1 class="course-title">Data Analytics & Business Intelligence</h1>
+    </header>
+
+    <!-- Course Details Section -->
+    <section class="course-details">
+      <div class="course-image-container">
+        <img
+          src="../images/img3.jpeg"
+          alt="Course Image"
+          class="course-image"
+        />
+      </div>
+      <div class="course-info">
+        <h2>Course Objective</h2>
+        <p>
+          This program aims to equip final-year students with essential skills
+          in Data Analytics and Business Intelligence, enabling them to analyze,
+          interpret, and present data effectively. Through hands-on training in
+          Python, MySQL, Advanced Excel, and Power BI, students will learn data
+          cleaning, transformation, visualization, and storytelling. By
+          completing real-world projects, they will gain the technical and
+          analytical expertise needed to excel in roles such as Data Analyst or
+          Business Intelligence Specialist in a data-driven industry.
+        </p>
+      </div>
+    </section>
+
+    <!-- Course Modules Section -->
+    <section class="course-modules">
+      <h2 class="section-title">Course Modules</h2>
+      <div class="module">
+        <h3>
+          Module 1:
+          <span style="color: #ff7300"
+            >Introduction to Data Analytics and Python for Data Analysis
+          </span>
+        </h3>
+        <p>
+          Foundations of Data Analytics, Data Visualization, and Python Basics
+          for Data Analytics
+        </p>
+      </div>
+
+      <div class="module">
+        <h3>
+          Module 2:
+          <span style="color: #ff7300"
+            >Relational Databases and SQL for Analytics
+          </span>
+        </h3>
+        <p>Learn how to use MySQL to store, query, and manage data.</p>
+      </div>
+
+      <div class="module">
+        <h3>
+          Module 3:
+          <span style="color: #ff7300">Advanced Excel for Data Analysis </span>
+        </h3>
+        <p>This module focuses on Excel techniques commonly used in industry</p>
+      </div>
+
+      <div class="module">
+        <h3>
+          Module 4:
+          <span style="color: #ff7300"
+            >Power BI for Business Intelligence
+          </span>
+        </h3>
+        <p>
+          Master Power BI for interactive data visualizations and dashboards
+        </p>
+      </div>
+
+      <div class="conclusion">
+        <h2>Course Outcome</h2>
+        <p>
+          By the end of this program, students will be equipped with the
+          technical skills and practical knowledge to excel in data analytics
+          and business intelligence roles. They will be proficient in Python,
+          MySQL, Advanced Excel, and Power BI, enabling them to clean, analyze,
+          and visualize data effectively. Students will also gain experience in
+          creating interactive dashboards, performing advanced SQL queries, and
+          generating insights to drive business decisions, preparing them for
+          roles like Data Analyst or BI Specialist and other related roles.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tools Master -->
+    <div class="tools-container">
+      <div class="tools-title">Tools Covered</div>
+      <div class="tools-grid">
+        <!-- Tool Cards with Logos -->
+        <div class="tool-card">
+          <img src="../images/tools/dataanalytic/python.png" alt="Python" />
+        </div>
+        <div class="tool-card">
+          <img src="../images/tools/dataanalytic/numpy.png" alt="NumPy" />
+        </div>
+        <div class="tool-card">
+          <img src="../images/tools/dataanalytic/pandas.png" alt="Pandas" />
+        </div>
+        <div class="tool-card">
+          <img
+            src="../images/tools/dataanalytic/matplotlib.png"
+            alt="Matplotlib"
+          />
+        </div>
+        <div class="tool-card">
+          <img src="../images/tools/dataanalytic/seaborn.png" alt="Seaborn" />
+        </div>
+        <div class="tool-card">
+          <img src="../images/tools/dataanalytic/vba.png" alt="VBA" />
+        </div>
+        <div class="tool-card">
+          <img src="../images/tools/dataanalytic/mysql.png" alt="MySQL" />
+        </div>
+        <div class="tool-card">
+          <img src="../images/tools/dataanalytic/bi.png" alt="Power BI" />
+        </div>
+        <div class="tool-card">
+          <img
+            src="../images/tools/dataanalytic/pquery.png"
+            alt=" Power Query "
+          />
+        </div>
+        <div class="tool-card">
+          <img
+            src="../images/tools/dataanalytic/notebook.png"
+            alt="Jupyter Notebook"
+          />
+        </div>
+        <div class="tool-card">
+          <img
+            src="../images/tools/dataanalytic/macro.png"
+            alt="Excel Macros"
+          />
+        </div>
+        <div class="tool-card">
+          <img
+            src="../images/tools/dataanalytic/excel.png"
+            alt="Advanced Excel"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Skill Summary -->
+    <div class="summary-container">
+      <table>
+          <caption>Summary of Key Skills</caption>
+          <thead>
+              <tr>
+                  <th>Category</th>
+                  <th>Skills Mastered</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Technical Skills</td>
+                  <td>Python, SQL, Power BI, Advanced Excel, ETL, Automation with VBA and Python</td>
+              </tr>
+              <tr>
+                  <td>Analytical Skills</td>
+                  <td>EDA, Statistical Analysis, Problem-Solving with Data, Storytelling with Data</td>
+              </tr>
+              <tr>
+                  <td>Business Intelligence</td>
+                  <td>Dashboard Design, DAX, Data Visualization, Data-Driven Decision Making</td>
+              </tr>
+              <tr>
+                  <td>Soft Skills</td>
+                  <td>Collaboration, Project Management, Communication of Insights</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+    <!-- Notice Section -->
+    <section class="notice">
+      <div class="certification-section">
+        <h2>Course Certifications</h2>
+        <p>
+          Upon successful completion, you'll earn certifications to validate
+          your skills!
+        </p>
+        <div class="certification-cards">
+          <div class="certification-card">
+            <img src="../images/cert1.png" alt="Certificate 1" />
+            <h3>Data Analytics & Business Intelligence Certificate</h3>
+            <p>
+              Showcase your Data Analytics & Business Intelligence skills with
+              this industry-recognized certificate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="call-to-action">
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="#" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+
+            <div class="cta-text">
+              Enroll Now and Become a Data Analytics & Business Intelligence
+              Expert!
+            </div>
+            <button
+              class="cta-button"
+              onclick="window.location.href='https://registration.example.com';"
+            >
+              Register Today
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="course-footer">
+      <p>&copy; 2024 Foslipy - All rights reserved. Contact us: foslipy@gmail.com</p>
+    </footer>
+
+    <script src="course.js"></script>
+    <script src="component/certificate.js"></script>
+  </body>
+</html>

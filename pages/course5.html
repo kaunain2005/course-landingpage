@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Details</title>
+    <link rel="stylesheet" href="coursestyle.css" />
+    <style>
+      /* skill master  */
+      .skill-master h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #05009e;
+      }
+
+      .skill-master ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .skill-master ul li {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #555;
+        position: relative;
+        text-align: left;
+        padding-left: 1.2rem;
+      }
+
+      .skill-master ul li::before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: #05009e;
+      }
+      /* Certification Section */
+      .certification-section {
+        text-align: center;
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #020041, #243b55);
+        color: white;
+      }
+
+      .certification-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+      }
+
+      .certification-section p {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* Certification Cards */
+      .certification-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .certification-card {
+        background: #02004100;
+        border-radius: 15px;
+        overflow: hidden;
+        width: 700px;
+        padding: 40px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .certification-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .certification-card img {
+        width: 300px;
+        height: auto;
+        margin-bottom: 25px;
+      }
+
+      .certification-card h3 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        color: #fff;
+        text-shadow: 0 0 20px #ff8c00, 0 0 30px #ff8c00, 0 0 40px #ff8c00;
+      }
+
+      .certification-card p {
+        font-size: 1.2em;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="small"></div> -->
+    <!-- Header Section -->
+    <header class="course-header lighting-effect">
+      <div class="overlay"></div>
+      <h1 class="course-title">
+        Full Stack Development - Backend Python Django
+      </h1>
+    </header>
+
+    <!-- Course Details Section -->
+    <section class="course-details">
+      <div class="course-image-container">
+        <img
+          src="../images/django.png"
+          alt="Course Image"
+          class="course-image"
+        />
+      </div>
+      <div class="course-info">
+        <h2>Course Objective</h2>
+        <p>
+          The objective of this course is to equip students with the necessary
+          skills to design, develop, and deploy Full Stack Web Applications
+          using modern technologies like Django, Bootstrap, and MySQL. Students
+          will learn to implement best practices in backend development,
+          database management, and frontend design, while gaining experience in
+          version control through Git. The course also aims to teach the
+          fundamentals of Test Driven Development (TDD) to ensure high-quality
+          code and robust applications. Finally, students will be introduced to
+          the principles of continuous integration and deployment, enabling them
+          to confidently deploy applications to cloud platforms.
+        </p>
+      </div>
+    </section>
+
+    <!-- Course Modules Section -->
+    <section class="course-modules">
+      <h2 class="section-title">Course Modules</h2>
+      <div class="module">
+        <h3>
+          Module 1:
+          <span style="color: #ff7300">Frontend Fundamentals </span>
+        </h3>
+        <p>
+          HTML, CSS, and JavaScript Basics, Responsive Web Design, and Frontend
+          Frameworks (React or Angular)
+        </p>
+      </div>
+
+      <div class="module">
+        <h3>
+          Module 2:
+          <span style="color: #ff7300">Backend Fundamentals with Python </span>
+        </h3>
+        <p>
+          Python Programming Basics, Object-Oriented Programming, Database
+          Design and SQL
+        </p>
+      </div>
+
+      <div class="module">
+        <h3>
+          Module 3:
+          <span style="color: #ff7300">Django Framework </span>
+        </h3>
+        <p>Django Models, View, Templates, Forms and REST Framework (DRF)</p>
+      </div>
+
+      <div class="module">
+        <h3>
+          Module 4:
+          <span style="color: #ff7300">Full Stack Project </span>
+        </h3>
+        <p>
+          Project Planning and Design, Backend Development, Frontend Development
+          and Deployment
+        </p>
+      </div>
+
+      <div class="conclusion skill-master">
+        <h2>
+          Skills Mastered After a Full-Stack Development Course with Django
+        </h2>
+
+        <h3>Mobile Application Security</h3>
+        <ul>
+          <li>HTML, CSS, and JavaScript: Building the foundation of web pages</li>
+          <li>Frontend Frameworks: Creating dynamic, user-friendly interfaces</li>
+          <li>Responsive Design: Ensuring websites look great on all devices</li>
+        </ul>
+
+        <h3>Backend Development Skills</h3>
+        <ul>
+          <li>Python Programming: Writing efficient server-side logic</li>
+          <li>Django Framework: Building scalable web applications rapidly</li>
+          <li>Database Design: Structuring data effectively</li>
+          <li>Server-Side Logic: Handling requests and responses</li>
+        </ul>
+
+        <h3>Full-Stack Development Skills
+        </h3>
+        <ul>
+          <li>Version Control: Managing code changes and collaboration</li>
+          <li>Deployment: Launching web applications to the internet</li>
+          <li>Testing and Debugging: Ensuring code quality and fixing issues</li>
+          <li>Problem-solving and Critical Thinking: Breaking down complex problems</li>
+          <li>Collaboration and Teamwork: Working effectively with others</li>
+        </ul>
+
+      </div>
+
+      <div class="conclusion">
+        <h2>Course Outcome</h2>
+        <p>
+          Students will be able to develop and deploy fully functional full
+          stack web applications using Django for backend development and
+          Bootstrap for frontend design. They will have proficiency in managing
+          databases with MySQL and effectively using Git for version control and
+          collaboration. Students will also be able to implement Test Driven
+          Development (TDD) practices to ensure the reliability and quality of
+          their code. Additionally, they will gain hands-on experience in
+          deploying applications to cloud platforms and setting up CI/CD
+          pipelines for continuous integration and delivery.
+        </p>
+      </div>
+    </section>
+
+    <!-- Notice Section -->
+    <section class="notice">
+      <div class="certification-section">
+        <h2>Course Certifications</h2>
+        <p>
+          Upon successful completion, you'll earn certifications to validate
+          your skills!
+        </p>
+        <div class="certification-cards">
+          <div class="certification-card">
+            <img src="../images/cert1.png" alt="Certificate 1" />
+            <h3>Full Stack Development - Backend Python Django Certificate</h3>
+            <p>
+              Showcase your Digital Forensics Fundamentals skills with this
+              industry-recognized certificate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="call-to-action">
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="#" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+
+            <div class="cta-text">
+              Enroll Now and Become a Full Stack Development - Backend Python
+              Django Expert!
+            </div>
+            <button
+              class="cta-button"
+              onclick="window.location.href='https://registration.example.com';"
+            >
+              Register Today
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="course-footer">
+      <p>&copy; 2024 Foslipy - All rights reserved. Contact us: foslipy@gmail.com</p>
+    </footer>
+
+    <script src="course.js"></script>
+    <script src="component/certificate.js"></script>
+  </body>
+</html>
